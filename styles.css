@@ -17,8 +17,10 @@ body {
 /* HERO (Portada) */
 .hero {
   height: 100vh;
-  background: linear-gradient(rgba(2, 48, 71, 0.6), rgba(2, 48, 71, 0.6)),
-              url(imagenes/fondo-2.png) center/cover no-repeat;
+ /* background:linear-gradient(rgba(52, 73, 94, 0.7), rgba(52, 73, 94, 0.6)),
+              url(imagenes/fondo-reluciente.jpg) center/cover no-repeat;*/
+  background: linear-gradient(rgba(21, 67, 96, 0.8), rgba(21, 67, 96, 0.6)),
+  url(imagenes/espacio-empresarial.jpg) center/cover no-repeat;
   display: flex;
   flex-direction: column;
 }
@@ -67,7 +69,7 @@ body {
 }
 .hero-content h1 {
   font-size: 60px;
-  font-weight: 600;
+  font-weight: 800;
 }
 .subtext {
   margin: 20px 0;
@@ -76,11 +78,8 @@ body {
 }
 .btn-primary {
   display: inline-block;
-  padding: 8px 18px;
- /* background: linear-gradient(90deg,rgba(255, 132, 53, 0) 0%, rgba(255, 132, 53, 0.74) 27%, rgba(255, 132, 53, 1) 80%);*/
-  /*background: linear-gradient(90deg,rgba(255, 132, 53, 0.21) 0%, rgba(255, 132, 53, 0.7) 48%, rgba(255, 132, 53, 1) 80%);*/
-  /*background: linear-gradient(90deg,rgba(255, 132, 53, 0.21) 0%, rgba(255, 132, 53, 0.7) 42%, rgba(255, 132, 53, 0.73) 59%, rgba(255, 132, 53, 0.87) 82%, rgba(255, 132, 53, 1) 94%);*/
-  background: linear-gradient(90deg,rgba(255, 132, 53, 0.21) 0%, rgba(255, 132, 53, 0.7) 42%, rgba(255, 132, 53, 0.73) 59%, rgba(255, 132, 53, 0.79) 82%, rgba(255, 132, 53, 1) 94%);
+  padding: 6px 15px;
+  background-color:#34495E;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
@@ -90,16 +89,16 @@ body {
 
 /* SERVICES SECTION */
 .services {
-  height: 100vh;
+  min-height: 100vh;
   padding: 50px;
   text-align: center;
 
 }
 
 .services h2 {
-  font-size: 45px;
+  font-size: 50px;
   font-weight: 800;
-  color: #023047;
+  color: #1A1A1A;
   margin-bottom: 15px;
 }
 
@@ -108,7 +107,7 @@ body {
   list-style-type: none;
   margin-bottom: 40px;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
   flex-wrap: wrap;
   gap: 12px;
   align-items: center;
@@ -123,7 +122,7 @@ body {
     justify-content: center;
     text-align: center;
     /*color: #78a7c1;*/
-    color: #219ebc;
+    color: #3498DB;
     white-space: nowrap;
 }
 
@@ -131,48 +130,48 @@ body {
 .cards {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 60px;
 }
 
 .card {
   width: 240px;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  text-align: left;
 }
 
 .card img {
   width: 240px;
-  height: 320px;
-  border-radius: 4px;
+  height: 300px;
+  border-radius: 6px;
 }
 .card p {
   /*margin: 15px 0;*/
   font-size: 17px;
-  color: #023047;
+  color: #707070;
 }
 
 .card-text{
     width: 100%;
     height: auto;
     margin: 0 auto;
-    padding-top: 15px;
+    padding-top: 30px;
     padding-bottom: 15px;
 }
 
 .card h3{
-  color: #219ebc;
+  color: #1A1A1A;
+  font-weight: 800;
 }
 
 .card-link {
   font-weight: bold;
-  color: #ffffff;
+  color: #3498DB;
+  font-size: 18px;
   text-decoration: none;
-  padding: 8px 12px;
-  background-color: #219ebc;
-  border-radius: 5px;
   margin-top: auto;
 }
+
 .card-link:hover {
   background-color: #8ecae6;
 }
@@ -183,17 +182,22 @@ body {
 
 /* SECCIÓN NOSOTROS */
 .about {
-  height: 100vh;
   display: flex;
   align-items: center;
-  margin-top: 80px;
+  margin-top: 20px;
+  margin-bottom: 70px;
 }
+
+.bold{
+  font-weight: 800;
+}
+
 .about-content {
   display: flex;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
   align-items: center;
   gap: 40px;
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 .about-text {
@@ -202,25 +206,28 @@ body {
 .about-text h2 {
   font-size: 45px;
   font-weight: 800;
-  color: #023047;
+  color: #1A1A1A;
   margin-bottom: 15px;
 }
 .about-text h3 {
   font-size: 30px;
   font-weight: 400;
-  color: #023047;
+  color: #1a1a1a;
   margin-bottom: 20px;
 }
 .about-text p {
   font-size: 20px;
-  color: #023047;
+  color: #707070;
   line-height: 1.6;
 }
 .about-image {
   flex: 1;
 }
+
+
 .about-image img {
-  width: 100%;
+  width: 450px;
+  height: auto;
   border-radius: 6px;
 }
 
@@ -228,13 +235,12 @@ body {
 .choose {
   min-height: 65vh;
   /*background-color: #2c4d73;*/
-  background-color: #023047;
+  background-color: #19376D;
   color: #fff;
   text-align: center;
   padding: 60px 20px;
   position: relative;
 }
-
 
 .choose h2 {
   font-size: 45px;
@@ -245,6 +251,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  font-size: 25px;
   gap: 20px 40px;
   max-width: 1200px;
   margin:
@@ -267,7 +274,8 @@ body {
     z-index: 2;
 }
 .choose-items div {
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: 300;
 }
 
 .check{
@@ -276,13 +284,14 @@ body {
 
 .btn-secondary {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 8px 18px;
   /*background: linear-gradient(to right, #4a90e2, #f26522);*/
   background: linear-gradient(90deg,rgba(255, 132, 53, 0.21) 0%, rgba(255, 132, 53, 0.7) 42%, rgba(255, 132, 53, 0.73) 59%, rgba(255, 132, 53, 0.87) 82%, rgba(255, 132, 53, 1) 94%);
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: 400;
 }
 .btn-secondary:hover {
   opacity: 0.9;
@@ -294,13 +303,12 @@ body {
   padding: 100px 0;
   align-items: center;
   justify-content: center;
-  background-color: #e4e7ed;
 }
 
 .contact h2{
   font-size: 45px;
   font-weight: 800;
-  color: #2c4d73;
+  color: #1A1A1A;
   margin-bottom: 20px;
 }
 
@@ -309,7 +317,7 @@ body {
   font-style: italic;
   max-width: 800px;
   font-weight: 500;
-  color: #219ebc;
+  color: #19376D;
   margin-bottom: 40px;
   text-align: center;
   justify-content: center;
@@ -393,7 +401,7 @@ iframe {
 
 /* FOOTER */
 .footer {
-  background-color: #023047;
+  background-color: #19376D;
   color: #fff;
   padding-top: 50px;
   font-size: 14px;
@@ -577,3 +585,219 @@ iframe {
                 padding: 20px;
             }
         }
+
+
+
+/* Sección Servicios Limpieza */
+.servicios-limpieza {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.servicios-limpieza h2 {
+    font-size: 45px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    color: #1A1A1A;
+    /*max-width: 600px;*/
+}
+
+.servicios-limpieza p {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    color: #7F8C8D;
+    max-width: 800px;
+}
+
+.cards-limpieza {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+}
+
+.card-limpieza {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 250px;
+}
+
+.card-limpieza img {
+    width: 135px;
+    height: 135px;
+    margin-bottom: 30px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.card-limpieza p {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1A1A1A;
+    line-height: 1.4;
+}
+
+.card-limpieza-especial{
+  margin-top: 30px;
+}
+
+.servicios-limpieza button{
+  display: inline-block;
+  padding: 8px 18px;
+  background: rgba(255, 132, 53, 1);
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+/* Sección Tareas Limpieza */
+.tareas-limpieza {
+    /*min-height: 100vh;*/
+    display: flex;
+    align-items: center;
+    padding: 80px 20px;
+    background: #f8f9fa;
+}
+
+.tareas-limpieza > div {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.tareas-limpieza h2 {
+    font-size: 45px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #1A1A1A;
+    max-width: 700px;
+}
+
+.tareas-limpieza > div > p {
+    font-size: 26px;
+    font-weight: 600;
+    max-width: 600px;
+    margin-bottom: 25px;
+    color: #7F8C8D;
+}
+
+.tareas-limpieza ul {
+    list-style: none;
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 8px;
+}
+
+.tareas-limpieza li {
+    padding-left: 20px;
+    font-size: 1.2rem;
+    color: #1A1A1A;
+    display: flex;
+    align-items: center;
+    /*margin-bottom: 8px;
+    border-radius: 0 8px 8px 0;*/
+}
+
+.icono-check{
+  color: #3498DB;
+  font-size: 25px;
+  padding: 5px;
+}
+
+.tareas-limpieza button {
+    background: rgba(255, 132, 53, 1);
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    font-size: 1.1rem;
+    font-weight: 400;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tareas-limpieza button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+}
+
+/* Sección Locaciones */
+.locaciones {
+    /*min-height: 100vh;*/
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 20px;
+}
+
+.locaciones > div {
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.locaciones h2 {
+    font-size: 45px;
+    font-weight: 800;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #1A1A1A;
+}
+
+.locaciones > div {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.locaciones-container{
+  display: flex;
+  align-items: flex-start;
+}
+
+.limpieza-supermercado{
+    width: 350px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.locaciones ul {
+    list-style: none;
+    padding: 15px;
+}
+
+.locaciones li {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 1.1rem;
+    color: #1A1A1A;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.icono-locaciones-limpieza{
+  width: 40px;
+  height: auto;
+  margin: 8px;
+}

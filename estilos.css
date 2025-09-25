@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Lato, sans-serif;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* ---------------- HEADER + NAVBAR (se mantienen iguales) ---------------- */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(21, 67, 96, 0.8), rgba(21, 67, 96, 0.6)),
+  url(imagenes/espacio-empresarial.jpg) center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+}
+
+.logo-imagen {
+  width: 180px;
+  height: auto;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.margenes {
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.hero-content {
+  text-align: left;
+  color: #fff;
+  margin-top: 100px;
+}
+
+.hero-content h1 {
+  font-size: 60px;
+  font-weight: 800;
+}
+
+.subtext {
+  margin: 20px 0;
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 6px 15px;
+  background-color: #34495E;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* ---------------- SECCIÓN SERVICIOS ---------------- */
+.eventos-servicios {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.eventos-servicios h2 {
+  font-size: 45px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  color: #1A1A1A;
+}
+
+.eventos-servicios p {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  color: #7F8C8D;
+  max-width: 800px;
+}
+
+.eventos-cards {
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+
+.eventos-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 280px;
+}
+
+.eventos-card img {
+  width: 280px;
+  height: 320px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.eventos-card p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1A1A1A;
+  line-height: 1.4;
+}
+
+.eventos-card-destacada {
+  margin-top: 30px;
+}
+
+.eventos-btn {
+  display: inline-block;
+  padding: 8px 18px;
+  background: rgba(255, 132, 53, 1);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.eventos-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255,107,53,0.3);
+}
+
+/* ---------------- SECCIÓN TAREAS ---------------- */
+.eventos-tareas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px;
+  background: white;
+}
+
+.eventos-tareas > div {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.eventos-tareas h2 {
+  font-size: 45px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #1A1A1A;
+  max-width: 700px;
+}
+
+.eventos-tareas > div > p {
+  font-size: 22px;
+  font-weight: 600;
+  max-width: 600px;
+  margin-bottom: 25px;
+  color: #7F8C8D;
+}
+
+.eventos-tareas ul {
+  list-style: none;
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 15px;
+}
+
+.eventos-tareas li {
+  font-size: 1rem;
+  color: #1A1A1A;
+  display: flex;
+  align-items: center;
+}
+
+.eventos-icono-check {
+  color: #3498DB;
+  font-size: 25px;
+  padding: 5px;
+}
+
+/* ---------------- SECCIÓN LOCACIONES ---------------- */
+.eventos-locaciones {
+  display: flex;
+  flex-direction: column;
+  padding: 80px 20px;
+  background: #19376D;
+}
+
+.eventos-locaciones h2 {
+  font-size: 45px;
+  font-weight: 800;
+  margin-bottom: 50px;
+  color: white;
+  text-align: center;
+}
+
+.eventos-locaciones > div {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.eventos-locaciones-container {
+  display: flex;
+  gap: 40px;
+}
+
+.eventos-locaciones ul {
+  list-style: none;
+  padding: 15px;
+}
+
+.eventos-locaciones li {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 1.1rem;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.eventos-icono-locacion {
+  width: 35px;
+  height: auto;
+  margin: 8px;
+}
+
+.eventos-locaciones-imagen-container img {
+  width: 350px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- SECCIÓN TAREAS CON 2 COLUMNAS --- */
+.eventos-tareas {
+  padding: 80px 20px;
+  background: white;
+  text-align: center;
+}
+
+.eventos-tareas h2 {
+  font-size: 45px;
+  font-weight: 800;
+  margin-bottom: 50px;
+  color: #1A1A1A;
+}
+
+.eventos-tareas-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  text-align: left;
+}
+
+.eventos-tareas-col h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1A1A1A;
+}
+
+.eventos-tareas-col p {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #7F8C8D;
+}
+
+.eventos-tareas ul {
+  list-style: none;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.eventos-tareas li {
+  font-size: 1rem;
+  color: #1A1A1A;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.eventos-icono-check {
+  color: #3498DB;
+  font-size: 22px;
+  margin-right: 10px;
+}
+
+.eventos-lugares-lista li i {
+  color: #f57c00;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .eventos-tareas-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FOOTER */
+.footer {
+  background-color: #19376D;
+  color: #fff;
+  padding-top: 50px;
+  font-size: 14px;
+}
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 0 20px 40px 20px;
+}
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+.footer-col h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #f26522; /* detalle naranja del logo */
+  color: #ffffff;
+}
+.footer-col p, 
+.footer-col a {
+  color: #ccc;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+}
+.footer-col a:hover {
+  color: #fff;
+}
+.footer-col i {
+  margin-right: 8px;
+  color: #f26522;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  padding: 15px 0;
+  font-size: 13px;
+  color: #aaa;
+}
