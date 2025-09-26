@@ -1,0 +1,358 @@
+/* =============================================================================
+   MENU.CSS - Estilos completos del sistema de navegación
+   ============================================================================= */
+
+/* ===== NAVBAR BASE ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+}
+
+.logo {
+  width: 140px;
+  height: auto;
+}
+
+.logo-imagen {
+  width: 180px;
+  height: auto;
+}
+
+/* ===== MENU DESKTOP ===== */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #3498DB;
+}
+
+/* ===== DROPDOWN MENU ===== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.dropdown-toggle:hover {
+  color: #3498DB;
+}
+
+.dropdown-toggle::after {
+  content: "▼";
+  margin-left: 8px;
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+/* Rotación del ícono cuando está activo */
+.dropdown.active .dropdown-toggle::after,
+.dropdown:hover .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 280px;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  margin-top: 10px;
+  list-style: none;
+  padding: 8px 0;
+}
+
+.dropdown-menu li {
+  list-style: none;
+  margin: 0;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  margin: 2px 8px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f8f9fa;
+  color: #3498DB;
+  transform: translateX(4px);
+}
+
+/* ===== HAMBURGER MENU ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Animación para X simétrica */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+  background-color: #fff;
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+  background-color: #fff;
+}
+
+/* ===== MOBILE MENU ===== */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -350px;
+  width: 320px;
+  height: 100vh;
+  background: #19376D;
+  padding: 80px 30px 30px;
+  transition: right 0.3s ease;
+  z-index: 999;
+  overflow-y: auto;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu ul {
+  list-style: none;
+}
+
+.mobile-menu > ul > li {
+  margin-bottom: 20px;
+}
+
+.mobile-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  display: block;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+  color: #3498DB;
+}
+
+/* ===== MOBILE DROPDOWN ===== */
+.mobile-dropdown {
+  position: relative;
+}
+
+.mobile-dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mobile-dropdown-toggle::after {
+  content: "▼";
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.mobile-dropdown.active .mobile-dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+.mobile-dropdown-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding-left: 20px;
+}
+
+.mobile-dropdown.active .mobile-dropdown-menu {
+  max-height: 300px;
+}
+
+.mobile-dropdown-menu a {
+  font-size: 16px;
+  padding: 10px 0;
+  border-bottom: none;
+  color: #ccc;
+}
+
+.mobile-dropdown-menu a:hover {
+  color: #3498DB;
+}
+
+/* ===== OVERLAY ===== */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 998;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* =============================================================================
+   MEDIA QUERIES RESPONSIVE
+   ============================================================================= */
+
+/* ===== LARGE DESKTOP (1200px+) ===== */
+@media (min-width: 1200px) {
+  .navbar {
+    padding: 20px 120px;
+  }
+}
+
+/* ===== DESKTOP (1024px y menos) ===== */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 20px 40px;
+  }
+}
+
+/* ===== DESKTOP - Comportamiento hover (769px+) ===== */
+@media (min-width: 769px) {
+  /* Asegurar que menu esté visible */
+  .menu {
+    display: flex !important;
+  }
+  
+  .hamburger {
+    display: none !important;
+  }
+  
+  /* Comportamiento hover para dropdown */
+  .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .dropdown:hover .dropdown-toggle {
+    color: #3498DB;
+  }
+}
+
+/* ===== TABLET Y MOBILE (768px y menos) ===== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+  
+  /* Ocultar menu desktop y mostrar hamburger */
+  .menu {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: flex !important;
+  }
+  
+  /* En mobile, deshabilitar hover del dropdown */
+  .dropdown:hover .dropdown-menu {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-10px) !important;
+  }
+  
+  /* Solo el estado active funciona en mobile */
+  .dropdown.active .dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+  
+  .logo-imagen {
+    width: 140px;
+  }
+}
+
+/* ===== MOBILE LARGE (480px y menos) ===== */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 15px;
+  }
+  
+  .mobile-menu {
+    width: 280px;
+    right: -280px;
+  }
+  
+  .logo-imagen {
+    width: 120px;
+  }
+}
+
+/* ===== MOBILE SMALL (360px y menos) ===== */
+@media (max-width: 360px) {
+  .mobile-menu {
+    width: 260px;
+    right: -260px;
+  }
+  
+  .logo-imagen {
+    width: 100px;
+  }
+  
+  .navbar {
+    padding: 10px;
+  }
+}

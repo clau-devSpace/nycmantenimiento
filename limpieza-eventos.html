@@ -10,15 +10,33 @@
 <body>
     <!-- Header + Portada -->
   <header class="hero">
-    <nav class="navbar">
-      <div class="logo"><img src="imagenes/Logo-nyc-mantenimiento.svg" class="logo-imagen" alt="Logo NYC"></div>
-      <ul class="menu">
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Nosotros</a></li>
-        <li><a href="#">Servicios</a></li>
-        <li><a href="#">Contacto</a></li>
+   <nav class="navbar">
+  <div class="logo"><img src="imagenes/logo-mantenimiento-y-limpieza.png" class="logo-imagen" alt="Logo NYC"></div>
+  
+  <!-- Menu Desktop -->
+  <ul class="menu">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li class="dropdown">
+      <a href="#servicios" class="dropdown-toggle">Servicios</a>
+      <ul class="dropdown-menu">
+        <li><a href="#limpieza-general">Limpieza General</a></li>
+        <li><a href="#limpieza-eventos">Limpieza para Eventos</a></li>
+        <li><a href="#mantenimiento-preventivo">Mantenimiento Preventivo</a></li>
+        <li><a href="#mantenimiento-correctivo">Mantenimiento Correctivo</a></li>
       </ul>
-    </nav>
+    </li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+
+  <!-- Hamburger Menu -->
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+    <i class="fa-solid fa-xmark hamburger-close-icon"></i>
+  </div>
+</nav>
 
     <div class="hero-content-container margenes">
       <div class="hero-content">
@@ -30,7 +48,31 @@
         <a href="#" class="btn-primary">Conocer Servicios</a>
       </div>
     </div>
+
+    <div class="btn-whatsapp">
+       <a href="https://wa.me/2974438169?text=Hola,%20me%20interesa%20obtener%20más%20información,%20por%20favor." target="_blank" class="link-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
   </header>
+
+  <div class="mobile-menu">
+  <ul>
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li class="mobile-dropdown">
+      <a href="#servicios" class="mobile-dropdown-toggle">Servicios</a>
+      <ul class="mobile-dropdown-menu">
+        <li><a href="#limpieza-general">Limpieza General</a></li>
+        <li><a href="#limpieza-eventos">Limpieza para Eventos</a></li>
+        <li><a href="#mantenimiento-preventivo">Mantenimiento Preventivo</a></li>
+        <li><a href="#mantenimiento-correctivo">Mantenimiento Correctivo</a></li>
+      </ul>
+    </li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</div>
+
+<!-- Overlay -->
+<div class="overlay"></div>
 
   <main>
     <section class="eventos-servicios">
@@ -91,7 +133,7 @@
   <footer class="footer">
     <div class="footer-container">
         <div class="footer-col">
-        <img src="imagenes/Logo-nyc-mantenimiento.svg" alt="Logo NYC">
+        <img src="imagenes/logo-mantenimiento-y-limpieza.png" alt="Logo NYC">
         </div>
       <!-- Columna 1 -->
       <div class="footer-col">
@@ -104,7 +146,7 @@
       <!-- Columna 2 -->
       <div class="footer-col">
         <h3>Servicios</h3>
-        <ul>
+        <ul class="footer-list-eventos">
           <li><a href="#">Mantenimiento Preventivo</a></li>
           <li><a href="#">Mantenimiento Correctivo</a></li>
           <li><a href="#">Limpieza para Eventos</a></li>
@@ -130,6 +172,39 @@
   <!-- Font Awesome (para íconos) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+  <!--JavaScript para el menu-->
+
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const overlay = document.querySelector('.overlay');
+  
+  // Función para cerrar menú mobile
+  function closeMobileMenu() {
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  
+  // Toggle menú mobile
+  hamburger?.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    overlay.classList.toggle('active');
+    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+  });
+  
+  // Cerrar con overlay o enlaces
+  overlay?.addEventListener('click', closeMobileMenu);
+  document.querySelectorAll('.mobile-menu a:not(.mobile-dropdown-toggle)').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+  
+ 
+});
+</script>
     
 </body>
 </html>
