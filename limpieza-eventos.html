@@ -5,28 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Limpieza Eventos</title>
     <link href="estilos.css" rel="stylesheet">
+    <link rel="stylesheet" href="menu.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body>
     <!-- Header + Portada -->
   <header class="hero">
    <nav class="navbar">
-  <div class="logo"><img src="imagenes/logo-mantenimiento-y-limpieza.png" class="logo-imagen" alt="Logo NYC"></div>
+  <div class="logo"><a href="index.html"><img src="imagenes/logo-mantenimiento-y-limpieza.png" class="logo-imagen" alt="Logo NYC"></a></div>
   
   <!-- Menu Desktop -->
   <ul class="menu">
-    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="index.html">Inicio</a></li>
     <li><a href="#nosotros">Nosotros</a></li>
     <li class="dropdown">
       <a href="#servicios" class="dropdown-toggle">Servicios</a>
       <ul class="dropdown-menu">
-        <li><a href="#limpieza-general">Limpieza General</a></li>
-        <li><a href="#limpieza-eventos">Limpieza para Eventos</a></li>
-        <li><a href="#mantenimiento-preventivo">Mantenimiento Preventivo</a></li>
-        <li><a href="#mantenimiento-correctivo">Mantenimiento Correctivo</a></li>
+        <li><a href="limpieza-general.html">Limpieza General</a></li>
+        <li><a href="limpieza-eventos.html">Limpieza para Eventos</a></li>
+        <li><a href="mantenimiento-preventivo.html">Mantenimiento Preventivo</a></li>
+        <li><a href="mantenimiento-correctivo.html">Mantenimiento Correctivo</a></li>
       </ul>
     </li>
-    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="index.html#contacto">Contacto</a></li>
   </ul>
 
   <!-- Hamburger Menu -->
@@ -34,7 +35,6 @@
     <span></span>
     <span></span>
     <span></span>
-    <i class="fa-solid fa-xmark hamburger-close-icon"></i>
   </div>
 </nav>
 
@@ -56,15 +56,15 @@
 
   <div class="mobile-menu">
   <ul>
-    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="index.html">Inicio</a></li>
     <li><a href="#nosotros">Nosotros</a></li>
     <li class="mobile-dropdown">
       <a href="#servicios" class="mobile-dropdown-toggle">Servicios</a>
       <ul class="mobile-dropdown-menu">
-        <li><a href="#limpieza-general">Limpieza General</a></li>
-        <li><a href="#limpieza-eventos">Limpieza para Eventos</a></li>
-        <li><a href="#mantenimiento-preventivo">Mantenimiento Preventivo</a></li>
-        <li><a href="#mantenimiento-correctivo">Mantenimiento Correctivo</a></li>
+        <li><a href="limpieza-general.html">Limpieza General</a></li>
+        <li><a href="limpieza-eventos.html">Limpieza para Eventos</a></li>
+        <li><a href="mantenimiento-preventivo.html">Mantenimiento Preventivo</a></li>
+        <li><a href="mantenimiento-correctivo.html">Mantenimiento Correctivo</a></li>
       </ul>
     </li>
     <li><a href="#contacto">Contacto</a></li>
@@ -133,7 +133,7 @@
   <footer class="footer">
     <div class="footer-container">
         <div class="footer-col">
-        <img src="imagenes/logo-mantenimiento-y-limpieza.png" alt="Logo NYC">
+       <a href="index.html"><img src="imagenes/logo-mantenimiento-y-limpieza.png" alt="Logo NYC"></a> 
         </div>
       <!-- Columna 1 -->
       <div class="footer-col">
@@ -147,10 +147,10 @@
       <div class="footer-col">
         <h3>Servicios</h3>
         <ul class="footer-list-eventos">
-          <li><a href="#">Mantenimiento Preventivo</a></li>
-          <li><a href="#">Mantenimiento Correctivo</a></li>
-          <li><a href="#">Limpieza para Eventos</a></li>
-          <li><a href="#">Limpieza General</a></li>
+          <li><a href="mantenimiento-preventivo.html">Mantenimiento Preventivo</a></li>
+          <li><a href="mantenimiento-correctivo.html">Mantenimiento Correctivo</a></li>
+          <li><a href="limpieza-eventos.html">Limpieza para Eventos</a></li>
+          <li><a href="limpieza-general.html">Limpieza General</a></li>
         </ul>
       </div>
 
@@ -158,7 +158,7 @@
       <div class="footer-col">
         <h3>Empresa</h3>
         <ul>
-          <li><a href="#">Nosotros</a></li>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
           <li><a href="#">Trabajá con Nosotros</a></li>
         </ul>
       </div>
@@ -202,6 +202,71 @@ document.addEventListener('DOMContentLoaded', function() {
     link.addEventListener('click', closeMobileMenu);
   });
   
+   function isDesktop() {
+    return window.innerWidth > 768;
+  }
+  
+  // DROPDOWN DESKTOP - Hover para abrir, Click para navegar
+  const desktopDropdown = document.querySelector('.dropdown');
+  const desktopToggle = document.querySelector('.dropdown-toggle');
+  
+  if (desktopDropdown && desktopToggle) {
+    
+    // DESKTOP: Hover para abrir dropdown
+    desktopDropdown.addEventListener('mouseenter', () => {
+      if (isDesktop()) {
+        desktopDropdown.classList.add('active');
+      }
+    });
+    
+    // DESKTOP: Mouse leave para cerrar dropdown
+    desktopDropdown.addEventListener('mouseleave', () => {
+      if (isDesktop()) {
+        desktopDropdown.classList.remove('active');
+      }
+    });
+    
+    // DESKTOP: Click en "Servicios" navega normalmente
+    desktopToggle.addEventListener('click', (e) => {
+      if (isDesktop()) {
+        // En desktop, permitir navegación normal (no preventDefault)
+        // El hover ya maneja la apertura del dropdown
+        return true;
+      } else {
+        // MOBILE: Click alterna el dropdown
+        e.preventDefault();
+        desktopDropdown.classList.toggle('active');
+      }
+    });
+  }
+  
+  // MOBILE DROPDOWN - Touch para alternar
+  const mobileDropdown = document.querySelector('.mobile-dropdown');
+  const mobileToggle = document.querySelector('.mobile-dropdown-toggle');
+  
+  if (mobileDropdown && mobileToggle) {
+    mobileToggle.addEventListener('click', (e) => {
+      e.preventDefault(); // En mobile siempre prevenir navegación
+      mobileDropdown.classList.toggle('active');
+    });
+  }
+  
+  // Cerrar dropdowns al hacer click fuera
+  document.addEventListener('click', (e) => {
+    if (isDesktop() && !e.target.closest('.dropdown')) {
+      document.querySelector('.dropdown')?.classList.remove('active');
+    }
+    if (!e.target.closest('.mobile-dropdown')) {
+      document.querySelector('.mobile-dropdown')?.classList.remove('active');
+    }
+  });
+  
+  // Actualizar comportamiento en resize
+  window.addEventListener('resize', () => {
+    // Cerrar todos los dropdowns al cambiar de tamaño
+    document.querySelector('.dropdown')?.classList.remove('active');
+    document.querySelector('.mobile-dropdown')?.classList.remove('active');
+  });
  
 });
 </script>
