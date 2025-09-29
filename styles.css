@@ -20,7 +20,7 @@ body {
  /* background:linear-gradient(rgba(52, 73, 94, 0.7), rgba(52, 73, 94, 0.6)),
               url(imagenes/fondo-reluciente.jpg) center/cover no-repeat;*/
   background: linear-gradient(rgba(21, 67, 96, 0.8), rgba(21, 67, 96, 0.6)),
-  url(imagenes/espacio-empresarial.jpg) center/cover no-repeat;
+  url(imagenes/espacio-empresarial.webp) center/cover no-repeat;
   display: flex;
   flex-direction: column;
 }
