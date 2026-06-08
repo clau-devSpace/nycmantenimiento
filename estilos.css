@@ -33,7 +33,7 @@ body {
 }
 
 .hero-content-container {
-  flex: 1;
+  flex:auto;
   display: flex;
   align-items: center; /* Centra verticalmente el contenido */
 }
